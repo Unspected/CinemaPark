@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol SearchResultViewControllerProtocol: AnyObject {
+    func searchResultViewControllerDidTapItem(_ viewModel: TitlePreviewModel)
+}
+
 class SearchResultViewController: UIViewController {
     
-    private var titles: [Title] = [Title]()
+    public var titles: [Title] = [Title]()
     
-    private let searchResultsCollectionView: UICollectionView = {
+    public weak var delegate: SearchResultViewControllerProtocol?
+    
+    public let searchResultsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 10 , height: 200)
         layout.minimumInteritemSpacing = 0
@@ -38,10 +44,10 @@ class SearchResultViewController: UIViewController {
    
 }
 
-
+//MARK: - SearchController
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,9 +55,28 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifer, for: indexPath) as? TitleCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .blue
+        let title = titles[indexPath.row]
+        cell.configure(with: title.poster_path ?? "")
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let title = titles[indexPath.row]
+        let titleName = title.original_title ?? ""
+        
+        APICaller.share.getMovie(with: titleName) { [weak self] result in
+            switch result {
+            case .success(let videoElement):
+                
+                self?.delegate?.searchResultViewControllerDidTapItem(TitlePreviewModel(title: title.original_title ?? "",
+                                                                                 youtubeVideo: videoElement, titleOverview: title.overview ?? ""))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
     
 }

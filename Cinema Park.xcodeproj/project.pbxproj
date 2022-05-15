@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9041ED9282B704D00EB4001 /* TitlePreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9041ED8282B704D00EB4001 /* TitlePreviewModel.swift */; };
+		E9041EFF282E124D00EB4001 /* CinemaParkModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9041EFD282E124D00EB4001 /* CinemaParkModel.xcdatamodeld */; };
 		E90B85EC280FC89C00D0F634 /* Image Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B85EB280FC89C00D0F634 /* Image Extensions.swift */; };
 		E91B37AD28110CDB00645F50 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B37AC28110CDB00645F50 /* APICaller.swift */; };
+		E94C4CE828224F9900113F53 /* YouTubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94C4CE728224F9900113F53 /* YouTubeSearchResponse.swift */; };
+		E94C4D0A2824ED6900113F53 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94C4D092824ED6900113F53 /* TitlePreviewViewController.swift */; };
 		E950CDE9280D17A100697219 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950CDE8280D17A100697219 /* CollectionViewTableViewCell.swift */; };
 		E97D0373280BA48000A03C84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D0372280BA48000A03C84 /* AppDelegate.swift */; };
 		E97D0375280BA48000A03C84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D0374280BA48000A03C84 /* SceneDelegate.swift */; };
@@ -20,6 +24,7 @@
 		E97D038C280BA80D00A03C84 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D038B280BA80D00A03C84 /* UpcomingViewController.swift */; };
 		E97D038E280BA82200A03C84 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D038D280BA82200A03C84 /* DownloadsViewController.swift */; };
 		E9C0117928190661003D795B /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0117828190661003D795B /* TitleTableViewCell.swift */; };
+		E9D73010282E160300AFFD5A /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7300F282E160300AFFD5A /* DataPersistanceManager.swift */; };
 		E9EBDF66281237CA0030505F /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBDF65281237CA0030505F /* Title.swift */; };
 		E9EBDF6828123DFE0030505F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBDF6728123DFE0030505F /* Extensions.swift */; };
 		E9EBDF6C28135E070030505F /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBDF6B28135E070030505F /* TitleCollectionViewCell.swift */; };
@@ -31,8 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9041ED8282B704D00EB4001 /* TitlePreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewModel.swift; sourceTree = "<group>"; };
+		E9041EFE282E124D00EB4001 /* CinemaParkModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CinemaParkModel.xcdatamodel; sourceTree = "<group>"; };
 		E90B85EB280FC89C00D0F634 /* Image Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Extensions.swift"; sourceTree = "<group>"; };
 		E91B37AC28110CDB00645F50 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		E94C4CE728224F9900113F53 /* YouTubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSearchResponse.swift; sourceTree = "<group>"; };
+		E94C4D092824ED6900113F53 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		E950CDE8280D17A100697219 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		E97D036F280BA48000A03C84 /* Cinema Park.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cinema Park.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D0372280BA48000A03C84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 		E97D038B280BA80D00A03C84 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		E97D038D280BA82200A03C84 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		E9C0117828190661003D795B /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		E9D7300F282E160300AFFD5A /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		E9EBDF65281237CA0030505F /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		E9EBDF6728123DFE0030505F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E9EBDF6B28135E070030505F /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EC0EFC281A14C0001175F0 /* TitleViewModel.swift */,
+				E9041ED8282B704D00EB4001 /* TitlePreviewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EBDF65281237CA0030505F /* Title.swift */,
+				E94C4CE728224F9900113F53 /* YouTubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E91B37AC28110CDB00645F50 /* APICaller.swift */,
+				E9D7300F282E160300AFFD5A /* DataPersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 				E97D037B280BA48000A03C84 /* Assets.xcassets */,
 				E97D037D280BA48000A03C84 /* LaunchScreen.storyboard */,
 				E97D0380280BA48000A03C84 /* Info.plist */,
+				E9041EFD282E124D00EB4001 /* CinemaParkModel.xcdatamodeld */,
 			);
 			path = "Cinema Park";
 			sourceTree = "<group>";
@@ -170,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EC0EFE281A5378001175F0 /* SearchResultViewController.swift */,
+				E94C4D092824ED6900113F53 /* TitlePreviewViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -259,14 +274,19 @@
 				E97D038E280BA82200A03C84 /* DownloadsViewController.swift in Sources */,
 				E97D0377280BA48000A03C84 /* MainTabBarViewController.swift in Sources */,
 				E9EBDF6C28135E070030505F /* TitleCollectionViewCell.swift in Sources */,
+				E9D73010282E160300AFFD5A /* DataPersistanceManager.swift in Sources */,
 				E97D0373280BA48000A03C84 /* AppDelegate.swift in Sources */,
+				E94C4D0A2824ED6900113F53 /* TitlePreviewViewController.swift in Sources */,
 				E9EBDF6828123DFE0030505F /* Extensions.swift in Sources */,
 				E9C0117928190661003D795B /* TitleTableViewCell.swift in Sources */,
+				E9041ED9282B704D00EB4001 /* TitlePreviewModel.swift in Sources */,
 				E97D0375280BA48000A03C84 /* SceneDelegate.swift in Sources */,
+				E9041EFF282E124D00EB4001 /* CinemaParkModel.xcdatamodeld in Sources */,
 				E91B37AD28110CDB00645F50 /* APICaller.swift in Sources */,
 				E9EC0EFF281A5378001175F0 /* SearchResultViewController.swift in Sources */,
 				E9EC0EFD281A14C0001175F0 /* TitleViewModel.swift in Sources */,
 				E90B85EC280FC89C00D0F634 /* Image Extensions.swift in Sources */,
+				E94C4CE828224F9900113F53 /* YouTubeSearchResponse.swift in Sources */,
 				E97D0388280BA7DC00A03C84 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +519,19 @@
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E9041EFD282E124D00EB4001 /* CinemaParkModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9041EFE282E124D00EB4001 /* CinemaParkModel.xcdatamodel */,
+			);
+			currentVersion = E9041EFE282E124D00EB4001 /* CinemaParkModel.xcdatamodel */;
+			path = CinemaParkModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E97D0367280BA48000A03C84 /* Project object */;
 }
