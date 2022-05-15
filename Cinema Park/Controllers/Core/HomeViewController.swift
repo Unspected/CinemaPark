@@ -18,6 +18,9 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController {
     
+    private var randomTrandingMovie: Title?
+    private var headerView: HeroHeaderUIView?
+    
     let sectionTitles: [String] = ["Tranding Movies", "Tranding TV", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTable: UITableView = {
@@ -34,11 +37,10 @@ class HomeViewController: UIViewController {
         view.addSubview(homeFeedTable)
         homeFeedTable.dataSource = self
         homeFeedTable.delegate = self
-        
         configureNavBar()
-        
-        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
+        headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         homeFeedTable.tableHeaderView = headerView
+        configureHeroHeaderView()
         
     }
     
@@ -52,6 +54,20 @@ class HomeViewController: UIViewController {
                 UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
                 ]
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    private func configureHeroHeaderView() {
+        
+        APICaller.share.getTrendingMovies { [weak self] result in
+            switch result {
+            case .success(let titles):
+                let selectedTitles = titles.randomElement()
+                self?.randomTrandingMovie = selectedTitles
+                self?.headerView?.configure(with: TitleViewModel(titleName: selectedTitles?.original_title ?? "", posterUrl: selectedTitles?.poster_path ?? ""))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,6 +91,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else { return UITableViewCell() }
+        
+        cell.delegate = self
         
         switch indexPath.section {
             
@@ -159,5 +177,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offsets))
     }
+    
+}
+
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTap(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(model: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     
 }
